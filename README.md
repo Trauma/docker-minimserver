@@ -16,7 +16,7 @@ or build it:
 
 ```cd docker-minimserver```
 
-```docker build --tag="$USER/bubbleupnpserver" .```
+```docker build --tag="$USER/docker-minimserver" .```
 
 run your build:
 ```docker run -d --name=<your_container_name> --net=host -v <path_to_your_music>/media/:ro $USER/docker-minimserver:latest```
