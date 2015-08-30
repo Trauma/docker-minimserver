@@ -19,13 +19,13 @@ or build it:
 ```docker build --tag="$USER/docker-minimserver" .```
 
 run your build:
-```docker run -d --name=<your_container_name> --net=host -v <path_to_your_music>/media/:ro $USER/docker-minimserver:latest```
+```docker run -d --name=<your_container_name> --net=host -v <path_to_your_music>:/media/:ro $USER/docker-minimserver:latest```
 
 # Quick Start
 
 Run the downloaded image (as a daemon):
 
-```docker run -d --name=<your_container_name> --net=host -v <path_to_your_music>/media/:ro tromatik/docker-minimserver:latest```
+```docker run -d --name=<your_container_name> --net=host -v <path_to_your_music>:/media/:ro tromatik/docker-minimserver:latest```
 
 # Configuration
 
