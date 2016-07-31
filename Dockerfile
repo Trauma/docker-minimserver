@@ -1,11 +1,11 @@
-FROM ubuntu:latest
+FROM java:8-jre
 
-RUN apt-get -y update && \
-	apt-get -y install --no-install-recommends openjdk-7-jre-headless wget && \
- 	wget -O /opt/MinimServer-0.8.3d-linux-x64.tar.gz http://minimserver.com/downloads/MinimServer-0.8.3d-linux-x64.tar.gz && \
-	cd /opt && \
-	tar xf MinimServer-0.8.3d-linux-x64.tar.gz && \
-	rm MinimServer-0.8.3d-linux-x64.tar.gz
+ENV url=http://jminim.com/cada/MinimServer-0.8.4-linux-x64.tar.gz
+
+RUN wget -O /opt/MinimServer.tar.gz ${url} && \
+		cd /opt && \
+		tar xf MinimServer.tar.gz && \
+		rm MinimServer.tar.gz
 
 COPY ./minimserver.config /opt/minimserver/data/minimserver.config
 
