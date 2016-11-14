@@ -1,6 +1,6 @@
 FROM java:8-jre
 
-ENV url=http://jminim.com/cada/MinimServer-0.8.4-linux-x64.tar.gz
+ARG url=http://jminim.com/cada/MinimServer-0.8.4-linux-x64.tar.gz
 
 RUN wget -O /opt/MinimServer.tar.gz ${url} && \
 		cd /opt && \
@@ -8,5 +8,7 @@ RUN wget -O /opt/MinimServer.tar.gz ${url} && \
 		rm MinimServer.tar.gz
 
 COPY ./minimserver.config /opt/minimserver/data/minimserver.config
+
+EXPOSE 9790 9791
 
 ENTRYPOINT [ "/opt/minimserver/bin/startc" ]
